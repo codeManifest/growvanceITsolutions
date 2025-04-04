@@ -12,46 +12,55 @@ export default function Card_section() {
       title: "SEO (Search Engine Optimization)",
       desc: "Boost your website’s visibility and rank higher on search engines with our expert SEO strategies.",
       img: "/images/seo.jpg",
+      link:'/seo'
     },
     {
       title: "PPC (Pay-Per-Click) Advertising",
       desc: "Get instant traffic and maximize ROI with data-driven Google Ads, Facebook Ads, and more.",
       img: "/images/ppc.jpg",
+      link:'/ppc-advertising'
     },
     {
       title: "Social Media Marketing (SMM)",
       desc: "Engage your audience, build brand loyalty, and grow your presence on platforms like Facebook, Instagram, and LinkedIn.",
       img: "/images/socialmedia.jpg",
+      link:'/social-media-marketing'
     },
     {
       title: "Content Marketing",
       desc: "Attract and retain customers with high-quality, SEO-friendly blogs, articles, and social media content.",
       img: "/images/content.jpg",
+      link:'/content-marketing'
     },
     {
       title: "Email Marketing",
       desc: "Convert leads into loyal customers with personalized email campaigns and automation.",
       img: "/images/email.jpg",
+      link:'/email-marketing'
     },
     {
       title: "Conversion Rate Optimization (CRO)",
       desc: "Improve user experience and increase conversions with our data-backed optimization techniques.",
       img: "/images/cro.jpg",
+      link:'/seo'
     },
     {
-      title: "Local SEO",
-      desc: "Dominate local searches and attract more customers with Google My Business optimization and local citations.",
+      title: "Content Marketing",
+      desc: "Crafting compelling, audience-focused content to boost engagement and conversions.",
       img: "/images/local-seo.jpg",
+      link:'/content-writing'
     },
     {
-      title: "Influencer Marketing",
-      desc: "Partner with influencers to build brand credibility and reach a wider audience.",
+      title: "Graphics Design",
+      desc: "Creating visually stunning designs that enhance brand identity and communication.",
       img: "/images/influencer.jpg",
+      link:'/graphics-design'
     },
     {
       title: "Affiliate Marketing",
-      desc: "Expand your brand’s reach with a performance-based marketing approach.",
+      desc: "Promoting products through partnerships to earn commissions on sales.",
       img: "/images/affiliate.jpg",
+      link:'/affiliate-marketing'
     },
   ];
 
@@ -68,7 +77,7 @@ export default function Card_section() {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <motion.h1
-        className="text-2xl sm:text-4xl font-bold text-center pt-10 sm:pt-16"
+        className="text-1xl sm:text-4xl font-bold text-center pt-10 sm:pt-16"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}

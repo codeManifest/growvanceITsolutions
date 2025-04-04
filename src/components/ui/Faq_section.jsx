@@ -107,7 +107,7 @@ export default function FaqSection() {
           <p className="text-center text-gray-600 text-base mt-9">
             Still have questions?{" "}
             <span className="cursor-pointer font-medium text-blue-600 transition-all duration-200 hover:underline">
-              Contact our support
+             <a href="/contact-us">Contact our support</a> 
             </span>
           </p>
         </div>

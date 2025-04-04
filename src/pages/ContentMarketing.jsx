@@ -13,6 +13,8 @@ import {
 } from "react-icons/fa";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Button_outline, Buttons_bg } from "../Models/Buttons";
+import CTA_Model from "../Models/CTA_Model";
 
 // ===== Components =====
 const Counter = ({ target, duration = 2 }) => {
@@ -212,111 +214,50 @@ const FAQSection = () => {
 };
 
 // ===== Live Chat Widget =====
-const LiveChatWidget = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <>
-      {/* Chat Button */}
-      <motion.button
-        onClick={() => setIsOpen(true)}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed bottom-8 right-8 bg-green-600 text-white p-4 rounded-full shadow-xl z-50"
-      >
-        <FaComments className="text-2xl" />
-      </motion.button>
-
-      {/* Chat Box */}
-      {isOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          className="fixed bottom-24 right-8 w-80 bg-white rounded-lg shadow-xl border border-green-200 z-50 overflow-hidden"
-        >
-          <div className="bg-green-700 text-white p-4 flex justify-between items-center">
-            <h3 className="font-bold">Chat About Content Strategy</h3>
-            <button onClick={() => setIsOpen(false)} className="text-white hover:text-green-200">
-              <FaTimes />
-            </button>
-          </div>
-          
-          <div className="p-4 h-64 overflow-y-auto">
-            <div className="bg-green-100 text-gray-800 p-3 rounded-lg mb-3 max-w-xs">
-              <p>Hi there! How can we help with your content needs?</p>
-            </div>
-            
-            <div className="space-y-3">
-              <button className="block w-full text-left bg-green-50 hover:bg-green-100 p-3 rounded-lg border border-green-200 transition duration-300">
-                Content Strategy Questions
-              </button>
-              <button className="block w-full text-left bg-green-50 hover:bg-green-100 p-3 rounded-lg border border-green-200 transition duration-300">
-                Pricing Information
-              </button>
-              <button className="block w-full text-left bg-green-50 hover:bg-green-100 p-3 rounded-lg border border-green-200 transition duration-300">
-                Case Studies
-              </button>
-            </div>
-          </div>
-          
-          <div className="p-4 border-t border-green-200">
-            <div className="flex">
-              <input 
-                type="text" 
-                placeholder="Type your message..." 
-                className="flex-1 border border-green-300 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-              <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-r-lg transition duration-300">
-                Send
-              </button>
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </>
-  );
-};
 
 // ===== Main Page Component =====
 const ContentMarketing = () => {
   return (
     <div className="font-sans bg-white text-gray-800 overflow-hidden">
-      <LiveChatWidget />
+      
       
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-50 to-green-100 py-20 px-4 md:px-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
           <AnimatedSection delay={0.2}>
-            <div className="md:w-1/2 mb-10 md:mb-0">
+            <div className="md:w-1/1 md:pr-10 mb-10 md:mb-0 ">
               <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-4">
-                <span className="text-green-600">Content Marketing</span> That Drives Results
+                <span className="text-green-600">Content Marketing That Doesn’t Work </span> (Just Like Everyone Else’s)
               </h1>
               <p className="text-xl text-green-700 mb-8">
-                Attract, engage, and convert your ideal customers with strategic content that ranks and resonates.
+              Keep publishing random blogs and hoping for traffic like 92% of brands. Or (if you insist) discover our proven framework for content that actually converts – but only if you want leads, authority, and ROI.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <motion.button
+                <motion.a
+                  href="https://wa.me/+919876543210?text=I’d%20like%20a%20content%20Marketing%20Audit.%20Can%20you%20help%20me? "
+                  
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
                 >
                   Get Content Audit
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg border-2 border-green-600 transition duration-300"
-                >
-                  See Case Studies
-                </motion.button>
+                </motion.a>
+                
+
+                {/* try new buttons */}
+
+                
+
+
+
               </div>
             </div>
           </AnimatedSection>
           <AnimatedSection delay={0.4}>
-            <div className="md:w-1/2">
+            <div className="md:w-1/1">
               <img
-                src="/content-marketing-illustration.svg"
+                src="/images/contentM.webp"
                 alt="Content Marketing Illustration"
                 className="w-full h-auto"
               />
@@ -447,71 +388,7 @@ const ContentMarketing = () => {
       </section>
 
       {/* Our Process */}
-      <section className="py-16 px-4 md:px-10">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedSection>
-            <h2 className="text-3xl font-bold text-center text-green-800 mb-12">
-              Our <span className="text-green-600">Content Creation</span> Process
-            </h2>
-          </AnimatedSection>
-          <div className="relative">
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-green-200"></div>
-            <div className="space-y-12 md:space-y-0">
-              {[
-                { 
-                  step: "1", 
-                  title: "Strategy & Research", 
-                  desc: "Keyword research, competitor analysis, and content planning",
-                  image: "Research illustration"
-                },
-                { 
-                  step: "2", 
-                  title: "Content Creation", 
-                  desc: "Professional writing, editing, and SEO optimization",
-                  image: "Writing illustration"
-                },
-                { 
-                  step: "3", 
-                  title: "Design & Enhancement", 
-                  desc: "Visual elements, formatting, and multimedia integration",
-                  image: "Design illustration"
-                },
-                { 
-                  step: "4", 
-                  title: "Publishing & Promotion", 
-                  desc: "Strategic distribution across channels for maximum reach",
-                  image: "Publishing illustration"
-                },
-                { 
-                  step: "5", 
-                  title: "Analysis & Optimization", 
-                  desc: "Performance tracking and continuous improvement",
-                  image: "Analytics illustration"
-                }
-              ].map((process, index) => (
-                <div key={index} className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} mb-8`}>
-                  <AnimatedSection delay={index * 0.2}>
-                    <div className="md:w-1/2 p-6">
-                      <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto md:mx-0">
-                        <span className="text-green-800 font-bold text-xl">{process.step}</span>
-                      </div>
-                      <h3 className="text-xl font-semibold text-green-700 mb-2 text-center md:text-left">{process.title}</h3>
-                      <p className="text-gray-600 text-center md:text-left">{process.desc}</p>
-                    </div>
-                  </AnimatedSection>
-                  <AnimatedSection delay={index * 0.3}>
-                    <div className="md:w-1/2 p-6">
-                      <div className="bg-gray-100 h-48 rounded-lg flex items-center justify-center">
-                        <span className="text-gray-400">{process.image}</span>
-                      </div>
-                    </div>
-                  </AnimatedSection>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Case Study */}
       <section className="py-16 px-4 md:px-10 bg-green-50">
@@ -590,38 +467,8 @@ const ContentMarketing = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4 md:px-10 bg-gradient-to-r from-green-600 to-green-700 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Transform Your Marketing With <span className="text-green-200">Powerful Content</span>?
-            </h2>
-          </AnimatedSection>
-          <AnimatedSection delay={0.2}>
-            <p className="text-xl mb-8">
-              Let's create content that attracts your ideal customers and grows your business.
-            </p>
-          </AnimatedSection>
-          <AnimatedSection delay={0.4}>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
-              >
-                Get Started Today
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white hover:bg-green-800 font-bold py-3 px-8 rounded-lg transition duration-300"
-              >
-                Book a Free Consultation
-              </motion.button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+     
+      <CTA_Model title1={"Ready to Transform Your Marketing With"} title2={"Powerful Content"} title3={"?"} desc={"Let's create content that attracts your ideal customers and grows your business."} />
     </div>
   );
 };

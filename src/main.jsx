@@ -18,6 +18,11 @@ import { ThemeProvider } from "./context/ThemeContext";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './index.css';
 import AboutUs from "./pages/AboutUs";
+import ServiceForm from "./pages/ServiceForm";
+import GraphicsDesignPage from "./pages/GraphicsDesignPage";
+import ContentWritingPage from "./pages/ContentWritingPage";
+
+import OurApproachPage from "./pages/OurApproachPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -38,6 +43,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="email-marketing" element={<EmailMarketing />} />
             <Route path="affiliate-marketing" element={<Affiliate_marketing />} />
             <Route path="about-us" element={<AboutUs/>} />
+            <Route path="service-form" element={<ServiceForm/>} />
+            <Route path="graphics-design" element={<GraphicsDesignPage/>} />
+            <Route path="content-writing" element={<ContentWritingPage/>} />
+            <Route path="our-approach" element={<OurApproachPage/>} />
+           
           </Route>
         </Routes>
       </BrowserRouter>

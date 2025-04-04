@@ -134,14 +134,15 @@ const MarketingHero = () => {
           <p className="text-lg text-green-800 mb-6 max-w-2xl mx-auto">
             We don't work with everyone – only serious businesses. <span className="font-bold text-green-600">If that's you, let's scale.</span>
           </p>
-          <motion.button
+          <motion.a
+          href="/service-form"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 inline-flex items-center"
           >
             Apply to Work With Us
             <FaArrowRight className="ml-2" />
-          </motion.button>
+          </motion.a>
         </motion.div>
       </motion.div>
     </div>

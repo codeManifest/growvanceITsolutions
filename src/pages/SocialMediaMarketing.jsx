@@ -225,30 +225,31 @@ const SocialMediaMarketing = () => {
       
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-50 to-green-100 py-20 px-4 md:px-10">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-4 items-center">
           <AnimatedSection delay={0.2}>
-            <div className="md:w-1/2 mb-10 md:mb-0">
+            <div className="md:w-1/1 mb-10 md:mb-0">
               <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-4">
-                Transform Your Brand with <span className="text-green-600">Strategic Social Media Marketing</span>
+              Keep Your Brand Irrelevant - <span className="text-green-600">Avoid Strategic Social Media Marketing</span>
               </h1>
               <p className="text-xl text-green-700 mb-8">
-                Grow your audience, boost engagement, and drive sales with our data-driven social media strategies.
+              Why bother connecting with your audience when you can stay invisible? Skip our proven strategies for engagement growth and brand authority - unless you actually want to stand out from competitors and drive real business results.
               </p>
-              <motion.button
+              <motion.a
+              href="https://wa.me/+919876543210?text=I’d%20like%20a%20Free%20Social%20Media%20Marketing%20Audit.%20Can%20you%20help%20me?"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
               >
                 Get a Free Social Media Audit
-              </motion.button>
+              </motion.a>
             </div>
           </AnimatedSection>
           <AnimatedSection delay={0.4}>
-            <div className="md:w-1/2">
+            <div className="">
               <img
-                src="/social-media-illustration.svg"
+                src="/images/socialMedia.webp"
                 alt="Social Media Illustration"
-                className="w-full h-auto animate-float"
+                className=" animate-float"
               />
             </div>
           </AnimatedSection>
@@ -398,7 +399,7 @@ const SocialMediaMarketing = () => {
               ].map((process, index) => (
                 <div key={index} className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} mb-8`}>
                   <AnimatedSection delay={index * 0.2}>
-                    <div className="md:w-1/2 p-6">
+                    <div className="md:w-1/1 p-6">
                       <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto md:mx-0">
                         <span className="text-green-800 font-bold text-xl">{process.step}</span>
                       </div>
@@ -407,11 +408,7 @@ const SocialMediaMarketing = () => {
                     </div>
                   </AnimatedSection>
                   <AnimatedSection delay={index * 0.3}>
-                    <div className="md:w-1/2 p-6">
-                      <div className="bg-gray-100 h-48 rounded-lg flex items-center justify-center">
-                        <span className="text-gray-400">Process Visualization</span>
-                      </div>
-                    </div>
+                    
                   </AnimatedSection>
                 </div>
               ))}
@@ -511,20 +508,22 @@ const SocialMediaMarketing = () => {
           </AnimatedSection>
           <AnimatedSection delay={0.4}>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.button
+              <motion.a
+              href="https://wa.me/+919876543210?text=i%20am%20Intrested%20to%20Social%20Media%20Marketing"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
               >
                 Get Started Today
-              </motion.button>
-              <motion.button
+              </motion.a>
+              <motion.a
+              href="tel://+919876543210"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-transparent border-2 border-white hover:bg-green-800 font-bold py-3 px-8 rounded-lg transition duration-300"
               >
                 Book a Free Strategy Call
-              </motion.button>
+              </motion.a>
             </div>
           </AnimatedSection>
         </div>

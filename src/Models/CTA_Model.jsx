@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ConsultationForm from '../components/ConsultationForm';
 import AnimatedSection from '../components/AnimatedSection/AnimatedSection';
 
-export default function CTA_Model() {
+export default function CTA_Model({title1,title2,title3,desc,}) {
   const [showModal, setShowModal] = useState(false);
+
+ const [showBox,setShowBox]=useState(false)
 
   return (
     <>
@@ -12,45 +14,30 @@ export default function CTA_Model() {
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Scale Your Business with <span className="text-green-200">High-Converting</span> Ads?
+               {title1} <span className="text-green-200">{title2} </span> {title3} 
             </h2>
           </AnimatedSection>
           
           <AnimatedSection delay={0.2}>
             <p className="text-xl mb-8">
-              Let's create a PPC strategy that delivers measurable results.
+              {desc}
             </p>
           </AnimatedSection>
           
           <AnimatedSection delay={0.4}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-              {[
-                { icon: '🚀', text: "Instant Results" },
-                { icon: '🎯', text: "Precision Targeting" },
-                { icon: '💰', text: "Maximize ROI" }
-              ].map((item, index) => (
-                <AnimatedSection key={index} delay={0.5 + index * 0.1}>
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    className="bg-green-800 bg-opacity-30 p-6 rounded-lg"
-                  >
-                    <div className="text-3xl mb-2">{item.icon}</div>
-                    <p className="font-medium">{item.text}</p>
-                  </motion.div>
-                </AnimatedSection>
-              ))}
-            </div>
+            
           </AnimatedSection>
 
           <AnimatedSection delay={0.6}>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.button
+              <motion.a
+              href='tel://+919876543210'
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
               >
                 Get Started Today
-              </motion.button>
+              </motion.a>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

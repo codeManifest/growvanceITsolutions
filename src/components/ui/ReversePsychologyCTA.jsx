@@ -111,13 +111,14 @@ const ReversePsychologyCTA = () => {
               ))}
             </ul>
             
-            <motion.button
+            <motion.a
+            href='https://wa.me/+919876543210?text=can%20you%20help%20me%20to%20grow%20my%20business'
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-medium py-3 px-8 rounded-lg shadow-md transition-all duration-200"
             >
               Prove Me Wrong - Apply Now
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
 

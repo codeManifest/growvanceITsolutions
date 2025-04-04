@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { IoLogoWechat } from "react-icons/io5";
 import { 
   FaCode, 
   FaMobileAlt, 
@@ -16,8 +17,8 @@ import {
 } from 'react-icons/fa';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import CTA_Model from '../Models/CTA_Model';
 
-// ===== Components =====
 const Counter = ({ target, duration = 2 }) => {
   const [count, setCount] = useState(0);
   const controls = useAnimation();
@@ -60,12 +61,10 @@ const AnimatedSection = ({ children, delay = 0 }) => {
   );
 };
 
-// ===== Main Component =====
 const WebAppDevelopment = () => {
   const [activeTab, setActiveTab] = useState('web');
   const [activeProcessStep, setActiveProcessStep] = useState(0);
 
-  // Green color palette variants
   const greenPalette = {
     primary: 'bg-green-600',
     primaryHover: 'hover:bg-green-700',
@@ -80,66 +79,219 @@ const WebAppDevelopment = () => {
 
   const services = {
     web: [
-      { icon: <FaCode className="text-green-500 text-3xl" />, title: "Custom Websites", desc: "Tailored solutions with modern frameworks" },
-      { icon: <FaServer className="text-green-500 text-3xl" />, title: "eCommerce Stores", desc: "High-converting online shops" },
-      { icon: <FaExpand className="text-green-500 text-3xl" />, title: "Web Applications", desc: "Scalable SaaS & enterprise solutions" }
+      { 
+        icon: <FaCode className="text-green-500 text-3xl" />, 
+        title: "Custom Websites", 
+        desc: "Tailored solutions with modern frameworks",
+        features: [
+          "100% mobile-responsive designs",
+          "SEO-optimized architecture",
+          "Lightning-fast page speeds",
+          "Custom CMS integration",
+          "E-commerce ready",
+          "Enterprise-grade security"
+        ]
+      },
+      { 
+        icon: <FaServer className="text-green-500 text-3xl" />, 
+        title: "eCommerce Stores", 
+        desc: "High-converting online shops",
+        features: [
+          "Shopify/WordPress/WooCommerce",
+          "Secure payment gateways",
+          "Inventory management",
+          "Product customization",
+          "Multi-channel integration",
+          "Analytics dashboard"
+        ]
+      },
+      { 
+        icon: <FaExpand className="text-green-500 text-3xl" />, 
+        title: "Web Applications", 
+        desc: "Scalable SaaS & enterprise solutions",
+        features: [
+          "React/Next.js frontends",
+          "Node.js/Python backends",
+          "User authentication",
+          "Database integration",
+          "API development",
+          "Cloud deployment"
+        ]
+      }
     ],
     app: [
-      { icon: <FaMobileAlt className="text-green-400 text-3xl" />, title: "iOS Apps", desc: "Native Swift development" },
-      { icon: <FaMobileAlt className="text-green-400 text-3xl" />, title: "Android Apps", desc: "Kotlin & Java solutions" },
-      { icon: <FaMobileAlt className="text-green-300 text-3xl" />, title: "Cross-Platform", desc: "Flutter & React Native" }
+      { 
+        icon: <FaMobileAlt className="text-green-400 text-3xl" />, 
+        title: "iOS Apps", 
+        desc: "Native Swift development",
+        features: [
+          "SwiftUI/UIKit",
+          "Apple Pay integration",
+          "ARKit for augmented reality",
+          "App Store optimization",
+          "Offline functionality",
+          "Push notifications"
+        ]
+      },
+      { 
+        icon: <FaMobileAlt className="text-green-400 text-3xl" />, 
+        title: "Android Apps", 
+        desc: "Kotlin & Java solutions",
+        features: [
+          "Material Design UI",
+          "Google Pay integration",
+          "Location services",
+          "Play Store optimization",
+          "Background services",
+          "Firebase integration"
+        ]
+      },
+      { 
+        icon: <FaMobileAlt className="text-green-300 text-3xl" />, 
+        title: "Cross-Platform", 
+        desc: "Flutter & React Native",
+        features: [
+          "Single codebase for iOS/Android",
+          "80% faster development",
+          "Native performance",
+          "Hot reload for quick iterations",
+          "Widget-based UI",
+          "Plugin ecosystem"
+        ]
+      }
     ],
     tech: [
-      { icon: <FaRobot className="text-green-500 text-3xl" />, title: "AI Integration", desc: "Smart chatbots & automation" },
-      { icon: <FaShieldAlt className="text-green-500 text-3xl" />, title: "Blockchain", desc: "Web3 & smart contracts" },
-      { icon: <FaChartLine className="text-green-500 text-3xl" />, title: "Data Analytics", desc: "Actionable insights" }
+      { 
+        icon: <FaRobot className="text-green-500 text-3xl" />, 
+        title: "AI Integration", 
+        desc: "Smart chatbots & automation",
+        features: [
+          "ChatGPT API integration",
+          "Computer vision",
+          "Predictive analytics",
+          "Natural language processing",
+          "Recommendation engines",
+          "Sentiment analysis"
+        ]
+      },
+      { 
+        icon: <FaShieldAlt className="text-green-500 text-3xl" />, 
+        title: "Blockchain", 
+        desc: "Web3 & smart contracts",
+        features: [
+          "Ethereum/Solana development",
+          "NFT marketplace",
+          "Tokenization",
+          "Wallet integration",
+          "DeFi applications",
+          "Smart contract auditing"
+        ]
+      },
+      { 
+        icon: <FaChartLine className="text-green-500 text-3xl" />, 
+        title: "Data Analytics", 
+        desc: "Actionable insights",
+        features: [
+          "Big data processing",
+          "Custom dashboards",
+          "ETL pipelines",
+          "Machine learning models",
+          "Real-time analytics",
+          "Data visualization"
+        ]
+      }
     ]
   };
 
   const processSteps = [
-    { title: "Discovery", desc: "Requirement analysis & planning" },
-    { title: "Design", desc: "UI/UX prototyping & wireframing" },
-    { title: "Development", desc: "Agile coding & iterations" },
-    { title: "Testing", desc: "QA & performance optimization" },
-    { title: "Launch", desc: "Deployment & post-launch support" }
+    { 
+      title: "Discovery", 
+      desc: "We analyze your business requirements and technical needs",
+      activities: [
+        "Requirement gathering workshops",
+        "Competitor analysis",
+        "Technical feasibility study",
+        "Project roadmap creation",
+        "Budget estimation"
+      ]
+    },
+    { 
+      title: "Design", 
+      desc: "Crafting intuitive user experiences and technical architecture",
+      activities: [
+        "Wireframing & prototyping",
+        "UI/UX design iterations",
+        "Brand identity integration",
+        "Database schema design",
+        "API specifications"
+      ]
+    },
+    { 
+      title: "Development", 
+      desc: "Agile implementation with continuous delivery",
+      activities: [
+        "2-week sprint cycles",
+        "Daily standup meetings",
+        "Code reviews & pair programming",
+        "Continuous integration",
+        "Mid-sprint client demos"
+      ]
+    },
+    { 
+      title: "Testing", 
+      desc: "Ensuring quality through rigorous validation",
+      activities: [
+        "Unit & integration testing",
+        "User acceptance testing",
+        "Performance optimization",
+        "Security vulnerability scans",
+        "Cross-browser/device testing"
+      ]
+    },
+    { 
+      title: "Launch", 
+      desc: "Seamless deployment and ongoing support",
+      activities: [
+        "Staging environment setup",
+        "Production deployment",
+        "User training sessions",
+        "Post-launch monitoring",
+        "Maintenance & updates"
+      ]
+    }
   ];
 
   return (
     <div className="font-sans bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <section className={`bg-gradient-to-r ${greenPalette.gradientFrom} ${greenPalette.gradientTo} text-white py-24 px-6`}>
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
-          <AnimatedSection delay={0.2} className="md:w-1/2 mb-12 md:mb-0">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Transform Your Business With <span className="text-green-300">Powerful</span> Web & Mobile Apps
+              Don't Transform Your Business With Powerful Apps <span className="text-green-300">(Stay Stuck in 2010)</span>
             </h1>
             <p className="text-xl mb-8 text-green-100">
-              We build high-performance digital experiences that drive engagement, boost conversions, and accelerate growth.
+              Who needs modern web and mobile apps anyway? Keep struggling with clunky processes, lost customers, and outdated tech - unless you actually want to streamline operations, boost revenue, and leave competitors wondering what happened.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
+              <motion.a
+                href='https://wa.me/+919876543210?text=whats%20the%20cost%20of%20web%20and%20app%20Development?'
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300`}
+                className={`bg-white text-green-70 flex gap-3 text-green-800 items-center hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300`}
               >
-                Get Free Consultation
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white hover:bg-green-800 font-bold py-3 px-8 rounded-lg transition duration-300"
-              >
-                View Our Work
-              </motion.button>
+                <IoLogoWechat /> Chat with us
+              </motion.a>
             </div>
-          </AnimatedSection>
-          <AnimatedSection delay={0.4} className="md:w-1/2">
+          </div>
+          
+          <div className="flex justify-center">
             <img 
-              src="/web-dev-hero.svg" 
+              src="/images/mobileapp.webp" 
               alt="Web and App Development" 
-              className="w-full h-auto max-w-lg mx-auto"
+              className="w-full h-auto max-w-md"
             />
-          </AnimatedSection>
+          </div>
         </div>
       </section>
 
@@ -211,10 +363,10 @@ const WebAppDevelopment = () => {
                   <h3 className="text-xl font-bold text-green-800 mb-3">{service.title}</h3>
                   <p className="text-gray-600 mb-6">{service.desc}</p>
                   <ul className="space-y-2">
-                    {[...Array(3)].map((_, i) => (
+                    {service.features.map((feature, i) => (
                       <li key={i} className="flex items-center">
                         <FaCheck className="text-green-500 mr-2" />
-                        <span className="text-gray-600">Feature {i + 1}</span>
+                        <span className="text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -257,15 +409,13 @@ const WebAppDevelopment = () => {
                   {processSteps[activeProcessStep].title} Phase
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  {processSteps[activeProcessStep].desc}. Our team follows industry best practices to deliver exceptional results.
+                  {processSteps[activeProcessStep].desc}
                 </p>
                 <ul className="space-y-3">
-                  {[...Array(3)].map((_, i) => (
+                  {processSteps[activeProcessStep].activities.map((activity, i) => (
                     <li key={i} className="flex items-start">
                       <FaCheck className="text-green-500 mt-1 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">
-                        Detailed activity {i + 1} for this phase with explanation of what we do.
-                      </span>
+                      <span className="text-gray-600">{activity}</span>
                     </li>
                   ))}
                 </ul>
@@ -373,39 +523,11 @@ const WebAppDevelopment = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className={`py-24 px-6 bg-gradient-to-r ${greenPalette.gradientFrom} ${greenPalette.gradientTo} text-white`}>
-        <div className="max-w-4xl mx-auto text-center">
-          <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Build Your Next Digital Solution?
-            </h2>
-          </AnimatedSection>
-          <AnimatedSection delay={0.2}>
-            <p className="text-xl mb-8 max-w-3xl mx-auto text-green-100">
-              Let's discuss how we can transform your ideas into high-performing web and mobile applications.
-            </p>
-          </AnimatedSection>
-          <AnimatedSection delay={0.4}>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
-              >
-                Get Free Quote
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white hover:bg-green-800 font-bold py-3 px-8 rounded-lg transition duration-300"
-              >
-                Schedule Call
-              </motion.button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <CTA_Model 
+        title1={"Not Ready to Build Your Digital Solution?"} 
+        title2={" (Good, Stay Behind)"} 
+        desc={"If you enjoy watching competitors launch better apps faster, keep postponing your project. But if you secretly want to modernize your business and own your market, maybe we should talk."} 
+      />
     </div>
   );
 };

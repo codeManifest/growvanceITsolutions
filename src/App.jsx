@@ -22,6 +22,7 @@ import SuccessStorySection from './components/reuse/SuccessStorySection'
 import MarketingHero from './components/ui/MarketingHero'
 import BoostYourWebsite from './components/ui/BoostYourWebsite'
 import ReversePsychologyCTA from './components/ui/ReversePsychologyCTA'
+import StatsSection from './components/StatsSectioin'
 
 
 
@@ -57,6 +58,7 @@ function App() {
 <Our_team_comp/>
 <Faq_section/>
 <Contact_form/>
+<StatsSection/>
 
    </main>
   )

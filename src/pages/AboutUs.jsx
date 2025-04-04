@@ -1,387 +1,334 @@
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import React from 'react';
+import { FaRocket, FaChartLine, FaHandshake, FaCheck, FaQuoteLeft, FaChevronRight, FaUsers, FaLightbulb, FaCog } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
-export default function AboutPage() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  const stats = [
-    { value: "150+", label: "Satisfied Clients", description: "Businesses transformed since 2019" },
-    { value: "4.9/5", label: "Client Rating", description: "Consistent excellence in service" },
-    { value: "300%", label: "Average Growth", description: "Revenue increase for clients" },
-    { value: "24/7", label: "Dedicated Support", description: "Always available for partners" }
-  ];
-
-  const principles = [
+const AboutUs = () => {
+  const teamMembers = [
     {
-      title: "Psychological First",
-      description: "We design solutions starting with human psychology, then layer on technology for maximum adoption.",
-      icon: "🧠"
+      name: "xyz",
+      role: "Growth Strategist",
+      expertise: "Scaling businesses from ₹10L to ₹10Cr",
+      image: ""
     },
     {
-      title: "Data-Backed Intuition",
-      description: "Combining hard analytics with behavioral insights to predict market movements before they happen.",
-      icon: "📊"
+      name: "xyz",
+      role: "Digital Marketing Lead",
+      expertise: "Paid advertising & conversion optimization",
+      image: ""
     },
     {
-      title: "Growth Engineering",
-      description: "Architecting systems that create compounding results, not just one-time fixes.",
-      icon: "🚀"
+      name: "xyz",
+      role: "SEO Director",
+      expertise: "Organic growth specialist",
+      image: ""
+    },
+    {
+      name: "xyz",
+      role: "Content Strategist",
+      expertise: "Storytelling that converts",
+      image: ""
     }
   ];
 
-  const milestones = [
-    { year: "2019", event: "Founded in Bangalore with 3 passionate team members" },
-    { year: "2020", event: "Developed proprietary behavioral analytics framework" },
-    { year: "2021", event: "Expanded to serve clients across 3 new cities" },
-    { year: "2022", event: "Launched AI-powered business prediction models" },
-    { year: "2023", event: "Recognized as Top IT Solutions Provider by TechIndia" },
-    { year: "2024", event: "Serving 150+ clients across diverse industries" }
+  const processSteps = [
+    {
+      title: "Discovery",
+      description: "Deep dive into your business metrics",
+      icon: <FaCog className="text-green-600 text-2xl" />
+    },
+    {
+      title: "Strategy",
+      description: "Custom growth roadmap creation",
+      icon: <FaLightbulb className="text-green-600 text-2xl" />
+    },
+    {
+      title: "Execution",
+      description: "Precision implementation",
+      icon: <FaRocket className="text-green-600 text-2xl" />
+    },
+    {
+      title: "Optimization",
+      description: "Continuous performance improvement",
+      icon: <FaChartLine className="text-green-600 text-2xl" />
+    }
   ];
 
-  if (!isMounted) return null;
-
   return (
-    <div className="bg-white text-gray-900">
+    <div className="font-sans bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-gray-900">
-        <img 
-          src="/team-meeting.jpg"
-          alt="Growvance team collaborating"
-          className="absolute w-full h-full object-cover brightness-75"
-        />
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center px-4 max-w-4xl mx-auto"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            We <span className="text-green-400">Understand</span> What Makes Businesses <span className="text-amber-400">Grow</span>
-          </h1>
-          <p className="text-xl text-white mb-8">
-            Since 2019, we've been decoding the psychology behind successful digital transformations
-          </p>
-          <motion.button
+      <section className="bg-gradient-to-r from-green-700 to-green-900 text-white py-24 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+          >
+            We're Not for Everyone.<br />But We Might Be for You.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl max-w-3xl mx-auto mb-8"
+          >
+            Not Every Business Gets to Work With Us – Are You the Right Fit?
+          </motion.p>
+          <motion.a href='tel://+919876543210'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg"
+            className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
           >
-            Discover Our Approach
-          </motion.button>
-        </motion.div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-green-50 to-amber-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5 }}
-                className="bg-white p-6 rounded-xl shadow-sm text-center"
-              >
-                <p className="text-4xl font-bold text-green-600 mb-2">{stat.value}</p>
-                <p className="text-lg font-medium text-gray-800 mb-1">{stat.label}</p>
-                <p className="text-sm text-gray-600">{stat.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+            Make a Free Strategy Call
+          </motion.a >
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-20 px-4 max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-1/2"
-          >
-            <img
-              src="/data-analysis.jpg"
-              alt="Growvance data analysis"
-              className="w-full h-auto rounded-xl shadow-lg"
-            />
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-1/2"
-          >
-            <h2 className="text-3xl font-bold mb-6">
-              The <span className="text-green-600">Psychology</span> Behind Our Approach
-            </h2>
-            <p className="text-lg mb-4">
-              Growvance was founded in 2019 on a revolutionary insight: <span className="font-semibold">technology succeeds when it aligns with human psychology</span>.
-            </p>
-            <p className="mb-6">
-              While competitors focus on features, we start with <span className="text-green-600 font-medium">cognitive behavior</span> - understanding the mental models and decision-making processes that determine whether technology gets adopted or ignored.
-            </p>
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
-                <span>Pioneered behavioral-first IT solutions in India</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
-                <span>Developed adoption acceleration frameworks</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
-                <span>Trained 200+ professionals in psychological implementation</span>
-              </li>
-            </ul>
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="border border-green-600 text-green-600 hover:bg-green-50 font-medium py-2 px-6 rounded-lg"
+      {/* What Makes Us Different */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-green-800 mb-4">What Makes Us Different?</h2>
+            <div className="w-24 h-1 bg-green-500 mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="bg-green-50 p-8 rounded-xl border border-green-200"
             >
-              Meet Our Team
-            </motion.button>
-          </motion.div>
+              <div className="flex items-center mb-4">
+                <div className="bg-green-100 p-3 rounded-full mr-4">
+                  <FaChartLine className="text-green-600 text-xl" />
+                </div>
+                <h3 className="text-xl font-bold text-green-800">No BS Marketing</h3>
+              </div>
+              <p className="text-gray-600">We focus on revenue, not vanity metrics</p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="bg-green-50 p-8 rounded-xl border border-green-200"
+            >
+              <div className="flex items-center mb-4">
+                <div className="bg-green-100 p-3 rounded-full mr-4">
+                  <FaRocket className="text-green-600 text-xl" />
+                </div>
+                <h3 className="text-xl font-bold text-green-800">Proven Results</h3>
+              </div>
+              <p className="text-gray-600">50+ brands scaled their revenue with us</p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="bg-green-50 p-8 rounded-xl border border-green-200"
+            >
+              <div className="flex items-center mb-4">
+                <div className="bg-green-100 p-3 rounded-full mr-4">
+                  <FaHandshake className="text-green-600 text-xl" />
+                </div>
+                <h3 className="text-xl font-bold text-green-800">We Work Selectively</h3>
+              </div>
+              <p className="text-gray-600">Because we only take businesses we can actually grow</p>
+            </motion.div>
+          </div>
+
+          <div className="mt-12 bg-green-100 border-l-4 border-green-500 p-6 rounded-lg">
+            <p className="text-gray-700 italic">
+              "If you're just 'testing the waters,' we're probably not a good fit. If you're ready to scale, let's build your growth strategy."
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Core Principles */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-4">
-              Our <span className="text-green-600">Psychological</span> Framework
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              These principles guide every solution we create
+      {/* Our Process */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-green-800 mb-4">Our Proven Growth Process</h2>
+            <p className="text-xl text-green-700 max-w-3xl mx-auto">
+              A systematic approach that delivers consistent results
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {principles.map((principle, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                whileHover={{ scale: 1.05 }}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 text-center"
               >
-                <div className="text-4xl mb-4">{principle.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{principle.title}</h3>
-                <p className="text-gray-700">{principle.description}</p>
+                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  {step.icon}
+                </div>
+                <h3 className="text-xl font-bold text-green-800 mb-2">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+                <div className="mt-4 text-green-500 font-bold">{index + 1}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Milestones */}
-      <section className="py-20 px-4 max-w-6xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl font-bold mb-4">
-            Our <span className="text-green-600">Journey</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Key milestones in our growth story
-          </p>
-        </motion.div>
+      {/* Our Team */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-green-800 mb-4">Meet Our Growth Team</h2>
+            <div className="w-24 h-1 bg-green-500 mx-auto"></div>
+            <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
+              The experts who will be driving your business growth
+            </p>
+          </div>
 
-        <div className="relative">
-          <div className="absolute left-1/2 h-full w-0.5 bg-green-100 transform -translate-x-1/2"></div>
-          {milestones.map((milestone, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`mb-10 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
-            >
-              <div className={`w-1/2 p-4 ${index % 2 === 0 ? 'pr-10 text-right' : 'pl-10 text-left'}`}>
-                <h3 className="text-xl font-bold text-green-700">{milestone.year}</h3>
-                <p className="text-gray-700">{milestone.event}</p>
-              </div>
-              <div className="w-1/2 flex justify-center">
-                <div className="w-6 h-6 rounded-full bg-green-600 border-4 border-white"></div>
-              </div>
-              <div className={`w-1/2 p-4 ${index % 2 === 0 ? 'pl-10 text-left' : 'pr-10 text-right'}`}></div>
-            </motion.div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -10 }}
+                className="bg-green-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+              >
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-green-800">{member.name}</h3>
+                  <p className="text-green-600 font-medium mb-2">{member.role}</p>
+                  <p className="text-gray-600">{member.expertise}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Team Culture */}
-      <section className="py-20 px-4 max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-1/2"
-          >
-            <img
-              src="/office-space.jpg"
-              alt="Growvance office space"
-              className="w-full h-auto rounded-xl shadow-lg"
-            />
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-1/2"
-          >
-            <h2 className="text-3xl font-bold mb-6">
-              The <span className="text-amber-500">Growvance</span> Way
-            </h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-green-700">1. Cognitive Diversity</h3>
-                <p>
-                  We assemble teams with different thinking styles because breakthrough ideas emerge at the intersection of perspectives.
-                </p>
+      {/* Testimonials */}
+      <section className="py-20 bg-green-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-green-800 mb-4">They Took the Leap. Now It's Your Turn.</h2>
+            <p className="text-xl text-green-700 max-w-3xl mx-auto">
+              Real Businesses, Real Growth, Real Revenue
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+            >
+              <div className="text-4xl font-bold text-green-600 mb-2">10X</div>
+              <div className="flex items-center mb-4">
+                <div className="w-4 h-4 bg-green-500 rounded-full mr-2"></div>
+                <span className="text-gray-600">Revenue Growth</span>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-green-700">2. Psychological Safety</h3>
-                <p>
-                  Our culture encourages risk-taking and vulnerability - the foundation of true innovation.
-                </p>
+              <p className="text-gray-500">₹50K/month → ₹5L/month in 4 months</p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+            >
+              <div className="text-4xl font-bold text-green-600 mb-2">60X</div>
+              <div className="flex items-center mb-4">
+                <div className="w-4 h-4 bg-green-500 rounded-full mr-2"></div>
+                <span className="text-gray-600">Lead Growth</span>
               </div>
+              <p className="text-gray-500">5-10 leads/month → 300+ leads/month</p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+            >
+              <div className="text-4xl font-bold text-green-600 mb-2">#1</div>
+              <div className="flex items-center mb-4">
+                <div className="w-4 h-4 bg-green-500 rounded-full mr-2"></div>
+                <span className="text-gray-600">Brand Visibility</span>
+              </div>
+              <p className="text-gray-500">No brand presence → Top-ranking brand in Google search</p>
+            </motion.div>
+          </div>
+
+          <div className="bg-white p-8 rounded-xl shadow-md border border-green-200 max-w-4xl mx-auto">
+            <div className="flex items-start">
+              <FaQuoteLeft className="text-green-200 text-4xl mr-4 mt-1" />
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-green-700">3. Growth Obsession</h3>
-                <p>
-                  Every team member dedicates time to learning and experimentation to stay ahead of trends.
+                <p className="text-gray-700 text-lg mb-6">
+                  "Growvance didn't just bring us traffic—they brought us customers. Our revenue tripled."
                 </p>
+                <div className="flex items-center">
+                  <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center text-green-600 font-bold mr-4">
+                    AS
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-green-800">Amit Sharma</h4>
+                    <p className="text-green-600">Founder, EcoGoods</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Client Success */}
-      <section className="py-20 bg-green-600 text-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:w-1/2"
-            >
-              <img
-                src="/client-success.jpg"
-                alt="Client success story"
-                className="w-full h-auto rounded-xl shadow-lg"
-              />
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:w-1/2"
-            >
-              <h2 className="text-3xl font-bold mb-6">
-                Why Clients <span className="text-amber-300">Choose</span> Us
-              </h2>
-              <p className="text-lg mb-6">
-                We don't just implement technology - we engineer adoption and measurable business impact.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="bg-green-700 rounded-full p-2 mr-4">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <p>Behavioral-first approach ensures actual user adoption</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-green-700 rounded-full p-2 mr-4">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <p>Proprietary frameworks predict implementation challenges</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-green-700 rounded-full p-2 mr-4">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <p>Continuous optimization based on real user psychology</p>
-                </div>
-              </div>
-            </motion.div>
+      {/* Values Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-green-800 mb-4">Our Core Values</h2>
+            <div className="w-24 h-1 bg-green-500 mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-green-50 p-8 rounded-xl">
+              <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                <FaCheck className="text-green-600 mr-2" /> Transparency
+              </h3>
+              <p className="text-gray-600">No hidden fees or surprises. We communicate clearly about what we can and can't do for your business.</p>
+            </div>
+            <div className="bg-green-50 p-8 rounded-xl">
+              <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                <FaCheck className="text-green-600 mr-2" /> Accountability
+              </h3>
+              <p className="text-gray-600">We take ownership of our work and stand behind our strategies and results.</p>
+            </div>
+            <div className="bg-green-50 p-8 rounded-xl">
+              <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                <FaCheck className="text-green-600 mr-2" /> Growth Mindset
+              </h3>
+              <p className="text-gray-600">We're constantly learning and adapting to new market trends and technologies.</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <motion.h2 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold mb-6"
-          >
-            Ready to <span className="text-green-400">Transform</span> Your Business?
-          </motion.h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Let's apply psychological IT solutions to drive your growth
+      <section className="py-24 px-6 bg-gradient-to-r from-green-700 to-green-800 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Want to be our next success story?
+          </h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto text-green-100">
+            Let's talk about how we can scale your business.
           </p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+          <motion.a
+          href='https://wa.me/+919876543210?text=i%20want%20to%20book%20a%20free%20Growth%20Audit'
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white text-green-700 hover:bg-green-50 font-bold w-1/2 py-3 px-8 rounded-lg shadow-lg transition duration-300 flex items-center justify-center mx-auto"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg"
-            >
-              Get Started
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-white hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg"
-            >
-              Learn More
-            </motion.button>
-          </motion.div>
+            Book Your Free Growth Audit <FaChevronRight className="ml-2" />
+          </motion.a>
         </div>
       </section>
     </div>
   );
-}
+};
+
+export default AboutUs;

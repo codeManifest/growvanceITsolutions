@@ -70,13 +70,7 @@ export default function Content() {
           <hr className="border-gray-300 opacity-50 mt-4 mb-8" />
         </div>
 
-        <motion.button
-          whileHover={{ scale: 1.1, backgroundColor: "#4CAF50" }}
-          whileTap={{ scale: 0.9 }}
-          className="px-6 py-3 bg-green-500 text-white rounded-lg shadow-lg hover:shadow-xl transition-all"
-        >
-          Get Started
-        </motion.button>
+       
       </div>
     </motion.section>
   );

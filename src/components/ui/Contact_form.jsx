@@ -89,7 +89,7 @@ export default function ContactForm() {
             </div>
             <div className="mt-8 flex justify-end">
               <button type="submit" disabled={isSending}
-                className={`w-max flex items-center gap-2 rounded-2xl border-2 border-[#0057ff] bg-[#0057ff] px-5 py-1.5 text-sm font-semibold text-white ${isSending ? "opacity-70 cursor-not-allowed" : "hover:bg-blue-400"}`}>
+                className={`w-max flex items-center gap-2 rounded-2xl border-2 border-[#1f8106] bg-[#067d50] px-5 py-1.5 text-sm font-semibold text-white ${isSending ? "opacity-70 cursor-not-allowed" : "hover:bg-blue-400"}`}>
                 {isSending ? (
                   <>
                     <AiOutlineLoading3Quarters className="animate-spin" />

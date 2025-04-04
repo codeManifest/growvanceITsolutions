@@ -15,7 +15,8 @@ import {
   FaStar,
   FaUserTie,
   FaTools,
-  FaRocket
+  FaRocket,
+  FaWhatsapp
 } from 'react-icons/fa';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -95,22 +96,122 @@ const FAQItem = ({ question, answer }) => {
 const EmailMarketing = () => {
   const [activeTab, setActiveTab] = useState('strategy');
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const whatsappNumber = '+919876543210';
 
   const services = {
     strategy: [
-      { icon: <FaEnvelope className="text-green-500 text-3xl" />, title: "Email Strategy", desc: "Data-driven campaign planning" },
-      { icon: <FaUsers className="text-green-500 text-3xl" />, title: "Audience Segmentation", desc: "Precise targeting for better results" },
-      { icon: <FaChartLine className="text-green-500 text-3xl" />, title: "Performance Analytics", desc: "Track and optimize your campaigns" }
+      { 
+        icon: <FaEnvelope className="text-green-500 text-3xl" />, 
+        title: "Email Strategy", 
+        desc: "Data-driven campaign planning for maximum ROI",
+        features: [
+          "Custom email marketing roadmap",
+          "Customer journey mapping",
+          "Campaign calendar development",
+          "KPI and goal setting",
+          "Competitor analysis"
+        ]
+      },
+      { 
+        icon: <FaUsers className="text-green-500 text-3xl" />, 
+        title: "Audience Segmentation", 
+        desc: "Precise targeting for better results",
+        features: [
+          "Demographic segmentation",
+          "Behavioral targeting",
+          "Purchase history analysis",
+          "Lifecycle stage grouping",
+          "Custom segment creation"
+        ]
+      },
+      { 
+        icon: <FaChartLine className="text-green-500 text-3xl" />, 
+        title: "Performance Analytics", 
+        desc: "Track and optimize your campaigns",
+        features: [
+          "Real-time performance dashboards",
+          "A/B test result analysis",
+          "Conversion funnel tracking",
+          "ROI calculation",
+          "Monthly performance reports"
+        ]
+      }
     ],
     creation: [
-      { icon: <FaPenAlt className="text-green-500 text-3xl" />, title: "Email Design", desc: "Mobile-responsive templates" },
-      { icon: <FaSearch className="text-green-500 text-3xl" />, title: "Content Writing", desc: "Engaging, conversion-focused copy" },
-      { icon: <FaCogs className="text-green-500 text-3xl" />, title: "Automation Setup", desc: "Workflows that save you time" }
+      { 
+        icon: <FaPenAlt className="text-green-500 text-3xl" />, 
+        title: "Email Design", 
+        desc: "Mobile-responsive templates that convert",
+        features: [
+          "Custom HTML email templates",
+          "Mobile-responsive design",
+          "Brand-aligned visual style",
+          "Interactive elements",
+          "Accessibility optimization"
+        ]
+      },
+      { 
+        icon: <FaSearch className="text-green-500 text-3xl" />, 
+        title: "Content Writing", 
+        desc: "Engaging, conversion-focused copy",
+        features: [
+          "Strategic email copywriting",
+          "Subject line optimization",
+          "Personalized content",
+          "Call-to-action placement",
+          "A/B tested messaging"
+        ]
+      },
+      { 
+        icon: <FaCogs className="text-green-500 text-3xl" />, 
+        title: "Automation Setup", 
+        desc: "Workflows that save you time and drive sales",
+        features: [
+          "Welcome series setup",
+          "Abandoned cart sequences",
+          "Post-purchase follow-ups",
+          "Re-engagement campaigns",
+          "Behavior-triggered emails"
+        ]
+      }
     ],
     tools: [
-      { icon: <FaShieldAlt className="text-green-500 text-3xl" />, title: "Deliverability", desc: "Optimized inbox placement" },
-      { icon: <FaRegClock className="text-green-500 text-3xl" />, title: "Timing Optimization", desc: "Send at the perfect moment" },
-      { icon: <FaChartLine className="text-green-500 text-3xl" />, title: "A/B Testing", desc: "Data-backed improvements" }
+      { 
+        icon: <FaShieldAlt className="text-green-500 text-3xl" />, 
+        title: "Deliverability", 
+        desc: "Optimized inbox placement",
+        features: [
+          "SPF/DKIM/DMARC setup",
+          "Inbox placement testing",
+          "List hygiene management",
+          "Spam filter avoidance",
+          "Reputation monitoring"
+        ]
+      },
+      { 
+        icon: <FaRegClock className="text-green-500 text-3xl" />, 
+        title: "Timing Optimization", 
+        desc: "Send at the perfect moment",
+        features: [
+          "Send time analysis",
+          "Timezone optimization",
+          "Frequency testing",
+          "Behavioral timing",
+          "Seasonal adjustments"
+        ]
+      },
+      { 
+        icon: <FaChartLine className="text-green-500 text-3xl" />, 
+        title: "A/B Testing", 
+        desc: "Data-backed improvements",
+        features: [
+          "Subject line testing",
+          "Content variations",
+          "Design A/B tests",
+          "CTA placement tests",
+          "Multivariate testing"
+        ]
+      }
     ]
   };
 
@@ -200,44 +301,63 @@ const EmailMarketing = () => {
     }
   ];
 
+  // Function to handle WhatsApp click
+  const handleWhatsAppClick = () => {
+    window.open(`https://wa.me/${whatsappNumber.replace('+', '')}`, '_blank');
+  };
+
   return (
     <div className="font-sans bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-700 to-green-900 text-white py-24 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
-          <AnimatedSection delay={0.2} className="md:w-1/2 mb-12 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Grow Your Business With <span className="text-green-300">High-Converting</span> Email Marketing
-            </h1>
-            <p className="text-xl mb-8 text-green-100">
-              Drive sales, nurture leads, and build customer loyalty with our data-driven email marketing solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
-              >
-                Get Free Audit
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white hover:bg-green-800 font-bold py-3 px-8 rounded-lg transition duration-300"
-              >
-                See Case Studies
-              </motion.button>
-            </div>
-          </AnimatedSection>
-          <AnimatedSection delay={0.4} className="md:w-1/2">
-            <img 
-              src="/email-marketing-hero.svg" 
-              alt="Email Marketing" 
-              className="w-full h-auto max-w-lg mx-auto"
-            />
-          </AnimatedSection>
-        </div>
-      </section>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+
+        {/* Column 1: Text Content */}
+        {/* Ensure the AnimatedSection component is working correctly */}
+        <AnimatedSection delay={0.2} className="md:w-1/2 w-full text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Still Think Email Marketing <span className="text-green-300">Doesn't Work</span>?
+          </h1>
+          <p className="text-xl mb-8 text-green-100">
+            You're probably right. It's complex, takes effort, and the results might just disrupt your current workflow. It's likely best to avoid finding out if targeted campaigns could actually grow your business.
+          </p>
+          <div className="flex justify-center md:justify-start">
+             {/* Using motion.a as a button */}
+            <motion.a
+              href="https://wa.me/+919876543210?text=can%20you%20help%20me%20to%20grow%20my%20Email%20Marketing" // Using "#" requires preventDefault in onClick
+              onClick={(e) => {
+                  e.preventDefault(); // Prevents jumping to top of page
+                  // --- POTENTIAL ISSUE AREA 2: Handler Call ---
+                  // Make sure handleWhatsAppClick is defined and does what you expect
+                  handleWhatsAppClick();
+                  // --- END POTENTIAL ISSUE AREA 2 ---
+                }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 inline-block cursor-pointer" // Added cursor-pointer
+            >
+              Prove Email Doesn't Work For You
+            </motion.a>
+          </div>
+        </AnimatedSection>
+
+        {/* Column 2: Image */}
+        {/* Ensure the AnimatedSection component is working correctly */}
+        <AnimatedSection delay={0.4} className="md:w-1/2 w-full">
+          {/* --- POTENTIAL ISSUE AREA 3: Image Path --- */}
+          {/* Verify this image path is correct relative to your project structure. */}
+          {/* Usually, images are placed in the `public` folder. */}
+          <img
+            src="/images/emailM.webp"
+            alt="Illustration showing email marketing concepts"
+            className="w-full h-auto object-contain mx-auto"
+            // Consider adding error handling for the image if needed: onError={(e) => e.target.style.display='none'}
+          />
+          {/* --- END POTENTIAL ISSUE AREA 3 --- */}
+        </AnimatedSection>
+
+      </div>
+    </section>
 
       {/* Stats Section */}
       <section className="py-16 bg-white">
@@ -285,14 +405,14 @@ const EmailMarketing = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - Enhanced */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-green-800 mb-4">Our Email Marketing Services</h2>
               <p className="text-xl text-green-700 max-w-3xl mx-auto">
-                End-to-end solutions to maximize your email marketing performance
+                Comprehensive solutions to maximize your email marketing performance and ROI
               </p>
             </div>
           </AnimatedSection>
@@ -307,9 +427,9 @@ const EmailMarketing = () => {
                     onClick={() => setActiveTab(tab)}
                     className={`px-6 py-3 rounded-md font-medium transition-all ${activeTab === tab ? 'bg-green-600 text-white' : 'text-gray-700 hover:bg-green-100'}`}
                   >
-                    {tab === 'strategy' && 'Strategy'}
-                    {tab === 'creation' && 'Content'}
-                    {tab === 'tools' && 'Optimization'}
+                    {tab === 'strategy' && 'Strategy & Planning'}
+                    {tab === 'creation' && 'Content & Design'}
+                    {tab === 'tools' && 'Optimization Tools'}
                   </button>
                 ))}
               </div>
@@ -330,14 +450,22 @@ const EmailMarketing = () => {
                   </div>
                   <h3 className="text-xl font-bold text-green-800 mb-3">{service.title}</h3>
                   <p className="text-gray-600 mb-6">{service.desc}</p>
-                  <ul className="space-y-2">
-                    {[...Array(3)].map((_, i) => (
-                      <li key={i} className="flex items-center">
-                        <FaCheck className="text-green-500 mr-2" />
-                        <span className="text-gray-600">Feature {i + 1}</span>
+                  <ul className="space-y-3 mb-6">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-start">
+                        <FaCheck className="text-green-500 mr-2 mt-1 flex-shrink-0" />
+                        <span className="text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
+                  <motion.button
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex items-center justify-center w-full py-2 px-4 bg-green-600 hover:bg-green-700 text-white rounded-lg transition duration-300"
+                    onClick={handleWhatsAppClick}
+                  >
+                    <FaWhatsapp className="mr-2" /> Get Started
+                  </motion.button>
                 </motion.div>
               ))}
             </div>
@@ -438,9 +566,10 @@ const EmailMarketing = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+                    className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center "
+                    
                   >
-                    View Full Case Study
+                     Case Study
                   </motion.button>
                 </div>
                 <div className="md:w-1/2 bg-green-100 flex items-center justify-center p-10">
@@ -580,9 +709,10 @@ const EmailMarketing = () => {
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
-                    className={`w-full py-3 px-6 rounded-lg font-bold ${plan.popular ? 'bg-green-600 hover:bg-green-700' : 'bg-green-500 hover:bg-green-600'} text-white transition duration-300`}
+                    className={`w-full py-3 px-6 rounded-lg font-bold ${plan.popular ? 'bg-green-600 hover:bg-green-700' : 'bg-green-500 hover:bg-green-600'} text-white transition duration-300 flex items-center justify-center`}
+                    onClick={handleWhatsAppClick}
                   >
-                    Get Started
+                    <FaWhatsapp className="mr-2" /> Enquire Now
                   </motion.button>
                 </motion.div>
               ))}
@@ -635,12 +765,12 @@ const EmailMarketing = () => {
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Transform Your Email Marketing?
+            Stop Wasting Time on Emails <span className='text-green-50/70' >That Don’t Convert!</span>
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
             <p className="text-xl mb-8 max-w-3xl mx-auto text-green-100">
-              Let's create email campaigns that drive real business results.
+            You think your email marketing is fine? Think again. Discover what’s holding you back and how to fix it—fast..
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.4}>
@@ -648,17 +778,19 @@ const EmailMarketing = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
+                className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 flex items-center justify-center"
+                onClick={handleWhatsAppClick}
               >
-                Get Started Today
+                <FaWhatsapp className="mr-2" /> WhatsApp Us
               </motion.button>
-              <motion.button
+              <motion.a
+              href='tel://+919876543210'
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white hover:bg-green-800 font-bold py-3 px-8 rounded-lg transition duration-300"
+                className="bg-transparent border-2 border-white hover:bg-green-800 font-bold py-3 px-8 rounded-lg transition duration-300 flex items-center justify-center"
               >
-                Book Free Consultation
-              </motion.button>
+                Call {whatsappNumber}
+              </motion.a>
             </div>
           </AnimatedSection>
         </div>

@@ -47,20 +47,22 @@ export default function ContentSection({ title1, title2, title3, img, desc, btn1
 
           {/* Buttons with Animation */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <motion.button
+            <motion.a
+            href='tel://+919876543210'
               whileHover={{ scale: 1.1, backgroundColor: "#63910d" }}
               whileTap={{ scale: 0.9 }}
               className="px-6 py-3 cursor-pointer bg-[#72a01c] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
             >
               {btn1}
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+            href='/contact-us'
               whileHover={{ scale: 1.1, backgroundColor: "#4f8a08" }}
               whileTap={{ scale: 0.9 }}
               className="px-6 py-3 cursor-pointer bg-[#63910d] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
             >
               {btn2}
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
 

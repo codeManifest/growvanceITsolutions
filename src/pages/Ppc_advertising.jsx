@@ -72,10 +72,12 @@ const Ppc_advertising = () => {
     <AnimatedSection delay={0.2}>
       <div className=" mb-4 md:mb-0">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-800 mb-2 leading-tight">
-          Maximize Your ROI with <span className="text-green-600">Smart PPC</span> Campaigns
+        If you ignore these   <span className="text-green-600">PPC tricks,</span> your return on investment will remain unchanged.
         </h1>
         <p className="text-lg md:text-xl text-green-700 mb-4">
-          Drive targeted traffic, increase conversions, and dominate your market with our data-driven PPC strategies.
+          The majority of companies continue to use the same PPC tactics.  Go ahead and ignore these revolutionary strategies if you're content with subpar outcomes.  But perhaps have a look if you secretly wish to increase conversions at a reduced cost.
+
+
         </p>
         <motion.button
           onClick={freeAuditHandler}
@@ -173,36 +175,36 @@ const Ppc_advertising = () => {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <h2 className="text-3xl font-bold text-center text-green-800 mb-12">
-              Our <span className="text-green-600">PPC Advertising</span> Services
+            If you don't like lower costs and higher conversions, <span className="text-green-600">don't use us for PPC.</span> 
             </h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                title: "Google Ads Management",
-                desc: "Maximize conversions with expertly optimized Search, Display, and Shopping campaigns.",
-              },
-              {
-                title: "Facebook & Instagram Ads",
-                desc: "Leverage social media to drive engagement and sales.",
-              },
-              {
-                title: "LinkedIn Advertising",
-                desc: "Target professionals and decision-makers in your industry.",
-              },
-              {
-                title: "Remarketing Campaigns",
-                desc: "Bring back lost visitors and increase conversions.",
-              },
-              {
-                title: "YouTube Video Ads",
-                desc: "Engage audiences with high-impact video advertising.",
-              },
-              {
-                title: "PPC Consulting",
-                desc: "Get expert guidance to improve your existing campaigns.",
-              },
-            ].map((service, index) => (
+  {
+    title: "Google Ads Management",
+    desc: "Go ahead, keep wasting budget on poorly optimized campaigns. Or (just a thought) let us maximize conversions across Search, Display, and Shopping - but only if you actually want results."
+  },
+  {
+    title: "Facebook & Instagram Ads",
+    desc: "Social media advertising is definitely overrated. Don't bother with these platforms unless you enjoy reaching your exact audience and driving measurable engagement."
+  },
+  {
+    title: "LinkedIn Advertising",
+    desc: "Targeting professionals and decision-makers sounds like way too much work. Probably better to just hope they magically find your business on their own."
+  },
+  {
+    title: "Remarketing Campaigns",
+    desc: "Those visitors who left your site? They're gone forever - and you should definitely leave them that way. (Unless you want to bring them back and convert them, but that seems pushy.)"
+  },
+  {
+    title: "YouTube Video Ads",
+    desc: "Video is such a terrible way to capture attention and tell your brand story. Stick to boring text ads if you prefer being forgotten immediately."
+  },
+  {
+    title: "PPC Consulting",
+    desc: "Who needs expert guidance? Your current 'spray and pray' ad strategy is working just fine... if working means burning money with no clear ROI."
+  }
+].map((service, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
@@ -274,7 +276,7 @@ const Ppc_advertising = () => {
       </section>
 
       {/* 🏆 Final CTA */}
-      <CTA_Model/>
+      <CTA_Model title1={"Ready to Scale Your Business with"} title2={"High-Converting "} title3={"Ads?"} desc={"Let's create a PPC strategy that delivers measurable results."} />
      
     </div>
   );

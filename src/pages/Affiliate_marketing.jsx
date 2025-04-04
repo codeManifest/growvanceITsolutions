@@ -19,6 +19,7 @@ import {
 } from 'react-icons/fa';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import CTA_Model from '../Models/CTA_Model';
 
 // ===== Components =====
 const Counter = ({ target, duration = 2 }) => {
@@ -193,7 +194,7 @@ const Affiliate_marketing = () => {
   const pricingPlans = [
     {
       name: "Starter",
-      price: "$799",
+      price: "₹1200",
       period: "/month",
       description: "For new affiliate programs",
       features: [
@@ -206,7 +207,7 @@ const Affiliate_marketing = () => {
     },
     {
       name: "Growth",
-      price: "$1,499",
+      price: "₹2,700",
       period: "/month",
       description: "Our most popular package",
       features: [
@@ -245,40 +246,36 @@ const Affiliate_marketing = () => {
     <div className="font-sans bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-700 to-green-900 text-white py-24 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
-          <AnimatedSection delay={0.2} className="md:w-1/2 mb-12 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              <span className="text-green-300">Grow Your Revenue</span> With Strategic Affiliate Marketing
-            </h1>
-            <p className="text-xl mb-8 text-green-100">
-              We build and optimize high-performing affiliate programs that drive consistent, scalable sales growth.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
-              >
-                Get Free Strategy Session
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white hover:bg-green-800 font-bold py-3 px-8 rounded-lg transition duration-300"
-              >
-                See Case Studies
-              </motion.button>
-            </div>
-          </AnimatedSection>
-          <AnimatedSection delay={0.4} className="md:w-1/2">
-            <img 
-              src="/affiliate-hero.svg" 
-              alt="Affiliate Marketing" 
-              className="w-full h-auto max-w-lg mx-auto"
-            />
-          </AnimatedSection>
-        </div>
-      </section>
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+    <AnimatedSection delay={0.2} className="md:w-1/2 flex flex-col justify-center">
+      <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        <span className="text-green-300">Affiliate Marketing: </span> A Waste of Time? Only If You’re Doing It Wrong.
+      </h1>
+      <p className="text-xl mb-8 text-green-100">
+      Most businesses fail at affiliate marketing because they lack strategy. Learn how to turn it into a revenue machine.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <motion.a
+          href='https://wa.me/+919876543210?text=can%20you%20help%20me%20to%20grow%20my%20Affiliate%20Marketing%20business'
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
+        >
+          Unlock the Strategy Now
+        </motion.a>
+        
+      </div>
+    </AnimatedSection>
+    <AnimatedSection delay={0.4} className="md:w-1/2 flex justify-center">
+      <img 
+        src="/images/affiliateM.webp" 
+        alt="Affiliate Marketing" 
+        className="w-full h-auto max-w-none"
+      />
+    </AnimatedSection>
+  </div>
+</section>
+
 
       {/* Stats Section */}
       <section className="py-16 bg-white">
@@ -629,38 +626,8 @@ const Affiliate_marketing = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 px-6 bg-gradient-to-r from-green-700 to-green-900 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Launch or Grow Your Affiliate Program?
-            </h2>
-          </AnimatedSection>
-          <AnimatedSection delay={0.2}>
-            <p className="text-xl mb-8 max-w-3xl mx-auto text-green-100">
-              Let's create a high-performing affiliate program that drives consistent revenue growth.
-            </p>
-          </AnimatedSection>
-          <AnimatedSection delay={0.4}>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-green-700 hover:bg-green-50 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300"
-              >
-                Get Started Today
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white hover:bg-green-800 font-bold py-3 px-8 rounded-lg transition duration-300"
-              >
-                Book Free Consultation
-              </motion.button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      
+      <CTA_Model title1={"Think Your Affiliate Program Is Good Enough?"} title2={"Think Again."} desc={"Most programs fail because they lack strategy. If you’re not seeing real growth, it’s time to fix what’s broken—before your competitors leave you behind."} />
     </div>
   );
 };

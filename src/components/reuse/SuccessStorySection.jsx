@@ -84,13 +84,14 @@ const SuccessStorySection = () => {
         </div>
 
         {/* CTA Button */}
-        <motion.button
+        <motion.a
+          href="https://wa.me/+919876543210?text=can%20you%20help%20me%20to%20grow%20my%20business"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="w-full md:w-auto md:px-12 py-3 px-6 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg shadow-md transition-all duration-300"
+          className="w-full md:w-auto md:px-12 leading-2 py-3 px-6 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg shadow-md transition-all duration-300"
         >
           {storyData.cta}
-        </motion.button>
+        </motion.a>
 
         {/* Decorative Elements */}
         <div className="absolute bottom-0 right-0 w-24 h-24 bg-green-200 rounded-full opacity-20 -mr-10 -mb-10" />
